@@ -4,3 +4,7 @@ modules.order
 hw1secws.ko
 hw1secws.mod.o
 Module.symvers
+.hw1secws.mod.o.cmd
+.hw1secws.o.cmd
+.cache.mk
+.hw1secws.ko.cmd
