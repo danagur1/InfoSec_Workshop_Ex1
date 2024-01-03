@@ -1,0 +1,6 @@
+hw1secws.mod.c
+hw1secws.o
+modules.order
+hw1secws.ko
+hw1secws.mod.o
+Module.symvers

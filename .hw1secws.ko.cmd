@@ -1,0 +1,1 @@
+cmd_/home/fw/Desktop/hw1/InfoSec_Workshop_Ex1/hw1secws.ko := ld -r -m elf_i386 -T ./scripts/module-common.lds --build-id  -o /home/fw/Desktop/hw1/InfoSec_Workshop_Ex1/hw1secws.ko /home/fw/Desktop/hw1/InfoSec_Workshop_Ex1/hw1secws.o /home/fw/Desktop/hw1/InfoSec_Workshop_Ex1/hw1secws.mod.o ;  true
