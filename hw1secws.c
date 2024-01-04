@@ -15,11 +15,14 @@ static int __init my_module_init_function(void) {
 	my_nf_hook_ops.hook = &my_nf_hookfn;
 	my_nf_hook_ops.pf = PF_INET;
 	my_nf_hook_ops.hooknum = 2; //NF_IP_FORWARD
+	nf_register_net_hook(NULL, &my_nf_hook_ops);
+	
 	printk(KERN_INFO "Hello World!\n");
 
 	return 0; /* if non-0 return means init_module failed */
 }
 static void __exit my_module_exit_function(void) {
+	nf_register_net_hook(NULL, &my_nf_hook_ops);
 	printk(KERN_INFO "Goodbye World!\n");
 }
 module_init(my_module_init_function);
