@@ -1,10 +1,12 @@
 #include <linux/module.h>	/* Needed by all modules */
-#include <linux/kernel.h>	/* Needed for KERN_INFO */
+#include <linux/kernel.h>	/* Needed for KERN_INFO and for the 						Macros */
 
-int init_module(void) {
+static int __init my_module_init_function(void) {
 	printk(KERN_INFO "Hello World!\n");
 	return 0; /* if non-0 return means init_module failed */
 }
-void cleanup_module(void) {
+static void __exit my_module_exit_function(void) {
 	printk(KERN_INFO "Goodbye World!\n");
 }
+module_init(my_module_init_function);
+module_exit(my_module_exit_function);
