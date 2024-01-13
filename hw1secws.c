@@ -48,15 +48,12 @@ static int __init my_module_init_function(void) {
 	set_forward_hook();
 	set_input_hook();
 	set_output_hook();
-	printk(KERN_INFO "Module loaded\n");
-
 	return 0; /* if non-0 return means init_module failed */
 }
 static void __exit my_module_exit_function(void) {
 	nf_unregister_net_hook(&init_net, &forward_nh_ops);
 	nf_unregister_net_hook(&init_net, &input_nh_ops);
 	nf_unregister_net_hook(&init_net, &output_nh_ops);
-	printk(KERN_INFO "Module removed\n");
 }
 module_init(my_module_init_function);
 module_exit(my_module_exit_function);
