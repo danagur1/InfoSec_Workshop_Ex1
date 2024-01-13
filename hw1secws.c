@@ -3,8 +3,6 @@
 
 #include <linux/netfilter.h>
 #include <linux/netfilter_ipv4.h>
-//#include <linux/ip.h>
-//#include <linux/config.h>
 
 static struct nf_hook_ops forward_nh_ops;
 static struct nf_hook_ops input_nh_ops;
