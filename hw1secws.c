@@ -45,16 +45,14 @@ static int set_output_hook(void){
 }
 
 static int __init my_module_init_function(void) {
-	int return_code = set_forward_hook();
-	if (return_code !=0){
+	int return_code;
+	if ((return_code = set_forward_hook()) !=0){
 		return return_code; //if registration failed, return error
 	}
-	return_code = set_input_hook();
-	if (return_code !=0){
+	if ((return_code = set_input_hook()) !=0){
 		return return_code; //if registration failed, return error
 	}
-	return_code = set_output_hook()
-	if (return_code !=0){
+	if ((return_code = set_output_hook()) !=0){
 		return return_code; //if registration failed, return error
 	}
 	return 0; //registration succeeded
